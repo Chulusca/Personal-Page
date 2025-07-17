@@ -7,15 +7,15 @@ const HeroSection = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
           <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6">
-            Professional
+            Aspiring
             <span className="block bg-gradient-primary bg-clip-text text-transparent">
               Full Stack Developer
             </span>
           </h1>
           
           <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            Passionate about creating exceptional digital experiences with modern technologies. 
-            Specialized in React, Node.js, and cloud architecture.
+            Passionate 18-year-old developer eager to create innovative digital solutions. 
+            Self-taught in modern technologies with a focus on mobile and web development.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -33,10 +33,10 @@ const HeroSection = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
             {[
-              { label: "Years Experience", value: "5+" },
-              { label: "Projects Completed", value: "50+" },
-              { label: "Happy Clients", value: "30+" },
-              { label: "Technologies", value: "15+" },
+              { label: "Age", value: "18" },
+              { label: "Personal Projects", value: "10+" },
+              { label: "Technologies", value: "12+" },
+              { label: "Learning Hours", value: "500+" },
             ].map((stat, index) => (
               <div key={index} className="text-center animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="font-heading font-bold text-2xl text-primary mb-1">
