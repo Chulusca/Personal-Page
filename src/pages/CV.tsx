@@ -4,67 +4,82 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import {useState} from "react";
 
 const CV = () => {
   const experience = [
     {
-      title: "Senior Full Stack Developer",
-      company: "TechCorp Solutions",
-      location: "San Francisco, CA",
-      period: "2022 - Present",
+      title: "Pasante de Desarrollo Low-Code",
+      company: "Softtek",
+      location: "Buenos aires, Argentina",
+      period: "Oct 2024 - Nov 2024",
       description: [
-        "Led development of microservices architecture serving 1M+ users",
-        "Implemented CI/CD pipelines reducing deployment time by 60%",
-        "Mentored junior developers and conducted code reviews",
-        "Built real-time analytics dashboard using React and Node.js"
+        "Mentoría con expertos en desarrollo low-code",
+        "Proyecto de Ecommerce con Power Apps y Microsoft Power Platform",
       ],
-      technologies: ["React", "Node.js", "AWS", "PostgreSQL", "Docker"]
-    },
-    {
-      title: "Full Stack Developer",
-      company: "StartupXYZ",
-      location: "New York, NY", 
-      period: "2020 - 2022",
-      description: [
-        "Developed customer-facing web applications from scratch",
-        "Integrated third-party APIs and payment systems",
-        "Optimized database queries improving response time by 40%",
-        "Collaborated with design team to implement responsive interfaces"
-      ],
-      technologies: ["Vue.js", "Express", "MongoDB", "Stripe API", "Redis"]
-    },
-    {
-      title: "Frontend Developer",
-      company: "Digital Agency Inc",
-      location: "Austin, TX",
-      period: "2019 - 2020", 
-      description: [
-        "Created responsive websites for various clients",
-        "Implemented modern CSS techniques and animations",
-        "Collaborated with UX/UI designers on user experience",
-        "Maintained and updated existing client websites"
-      ],
-      technologies: ["JavaScript", "HTML5", "CSS3", "SASS", "WordPress"]
+      technologies: ["Power Apps", "Microsoft Power Platform", "Low-Code"]
     }
   ];
 
   const education = [
     {
-      degree: "Bachelor of Science in Computer Science",
-      school: "University of Technology",
-      location: "California, USA",
-      period: "2015 - 2019",
-      achievements: ["Magna Cum Laude", "Dean's List 6 semesters", "Computer Science Society President"]
-    }
+      degree: "Estudiante de Ingeniería Informática",
+      school: "ITBA",
+      location: "Buenos Aires, Argentina",
+      period: "2025 - Actualidad",
+      achievements: ["Python"]
+    },
+    {
+      degree: "Bachiller en Informática con certificación jurisdiccional en diseño y desarrollo de aplicaciones web",
+      school: "ORT Argentina",
+      location: "Buenos Aires, Argentina",
+      period: "2019 - 2024",
+      achievements: ["JavaScript", "React", "Node.js", "HTML5", "CSS3", "Python", "C#", "SQL Server", "PostgreSQL", "Google Cloud Platform"]
+    },
   ];
 
   const certifications = [
-    "AWS Certified Solutions Architect",
-    "Google Cloud Professional Developer", 
-    "Certified Kubernetes Administrator",
-    "MongoDB Certified Developer"
-  ];
+  {
+    name: "HackerRank: SQL Advanced Certificate",
+    image: "https://media.licdn.com/dms/image/v2/D4D2DAQHl1OHoNMtTqA/profile-treasury-image-shrink_800_800/B4DZgZ4sKyHAAY-/0/1752780951781?e=1753387200&v=beta&t=BvDJ-zEoTRW0MzgOO6k7NesrGfXkbsHDneWMB-65ZPU",
+  },
+  {
+    name: "Educacion IT: Blockchain Ethereum Solidity",
+    image: "https://api.educacionit.com/pdf/certificados/tomas-czernuszka-1028491/71835?content_type=jpeg",
+  },  
+  {
+    name: "Google Cloud: Cloud Computing Fundamentals",
+    image: "https://cdn.qwiklabs.com/KBM55i60HvsjEpmnNOFSwSbmgeNi1vEjNuFy9vRJBfI%3D",
+  },
+  {
+    name: "Google Cloud: Infrastructure in Google Cloud",
+    image: "https://cdn.qwiklabs.com/KBM55i60HvsjEpmnNOFSwSbmgeNi1vEjNuFy9vRJBfI%3D",
+  },
+];
 
+const reconocimientos = [
+  {
+    name: "World ORT TAUB Young Entrepreneurship Program 2023",
+    image: "https://media.licdn.com/dms/image/v2/D4D2DAQFhRO2m740WGA/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1732193914224?e=1753387200&v=beta&t=JeAGoKad5pAdWJllEBBfCM0tboddYmF3B9t53oPYrWk",
+  },
+  {
+    name: "Segundo puesto UMAI UX Challenge",
+    image: "https://media.licdn.com/dms/image/v2/D4D2DAQFsJ0UitMLs9w/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1719431970376?e=1753387200&v=beta&t=u6nyhtPDU8L5BDedHuHMpPC6TDPzKQDbl3BZJVE4CfQ",
+  },
+];
+
+const [selectedImage, setSelectedImage] = useState<string | null>(null);
+const [imageAlt, setImageAlt] = useState<string | null>(null);
+
+const openModal = (image: string, alt: string) => {
+  setSelectedImage(image);
+  setImageAlt(alt);
+};
+
+const closeModal = () => {
+  setSelectedImage(null);
+  setImageAlt(null);
+};
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -76,10 +91,10 @@ const CV = () => {
             Curriculum Vitae
           </h1>
           <p className="text-lg text-muted-foreground mb-8">
-            Detailed professional experience and qualifications
+            Mi experiencia en detalle, educación y habilidades.
           </p>
           <Button className="bg-gradient-primary hover:shadow-hover">
-            Download PDF Version
+            Descarga la versión PDF
             <ExternalLink className="w-4 h-4 ml-2" />
           </Button>
         </div>
@@ -89,26 +104,26 @@ const CV = () => {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 font-heading text-xl">
               <Phone className="w-5 h-5 text-primary" />
-              Contact Information
+              Información de Contacto
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-muted-foreground" />
-                <span className="text-sm">john.doe@email.com</span>
+                <span className="text-sm">czernuszkatomas@email.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-muted-foreground" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <span className="text-sm">+54 9 11-6376-7268</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-muted-foreground" />
-                <span className="text-sm">San Francisco, CA</span>
+                <span className="text-sm">Buenos aires, Argentina</span>
               </div>
               <div className="flex items-center gap-2">
                 <ExternalLink className="w-4 h-4 text-muted-foreground" />
-                <span className="text-sm">linkedin.com/in/johndoe</span>
+                <span className="text-sm">www.linkedin.com/tomasczernuszka</span>
               </div>
             </div>
           </CardContent>
@@ -119,7 +134,7 @@ const CV = () => {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 font-heading text-xl">
               <Briefcase className="w-5 h-5 text-primary" />
-              Professional Experience
+              Experiencia Profesional
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
@@ -164,7 +179,7 @@ const CV = () => {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 font-heading text-xl">
               <GraduationCap className="w-5 h-5 text-primary" />
-              Education
+              Educación
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -198,27 +213,84 @@ const CV = () => {
         </Card>
 
         {/* Certifications */}
+        <div className="space-y-6">
         <Card className="bg-gradient-card shadow-card animate-slide-up" style={{ animationDelay: '0.3s' }}>
           <CardHeader>
             <CardTitle className="flex items-center gap-2 font-heading text-xl">
               <Award className="w-5 h-5 text-primary" />
-              Certifications
+              Certificados
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {certifications.map((cert) => (
-                <div key={cert} className="flex items-center gap-2 p-3 rounded-lg border border-border hover:border-primary/50 transition-colors">
+                <button
+                  key={cert.name}
+                  onClick={() => openModal(cert.image, cert.name)}
+                  className="flex items-center gap-2 p-3 rounded-lg border border-border hover:border-primary/50 transition-colors w-full text-left"
+                >
                   <Award className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium">{cert}</span>
-                </div>
+                  <span className="text-sm font-medium">{cert.name}</span>
+                </button>
               ))}
             </div>
           </CardContent>
         </Card>
 
+        {/* Reconocimientos */}
+        <Card className="bg-gradient-card shadow-card animate-slide-up" style={{ animationDelay: '0.3s' }}>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 font-heading text-xl">
+              <Award className="w-5 h-5 text-primary" />
+              Reconocimientos
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {reconocimientos.map((rec) => (
+                <button
+                  key={rec.name}
+                  onClick={() => openModal(rec.image, rec.name)}
+                  className="flex items-center gap-2 p-3 rounded-lg border border-border hover:border-primary/50 transition-colors w-full text-left"
+                >
+                  <Award className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium">{rec.name}</span>
+                </button>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
       </div>
       <Footer />
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center px-4"
+          onClick={closeModal}
+        >
+          <div
+            className="bg-background rounded-lg p-4 w-full max-w-xl relative shadow-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-black hover:text-red-400 transition"
+            >
+              ✕
+            </button>
+            <div className="w-full h-[500px] flex items-center justify-center overflow-hidden rounded-md">
+              <img
+                src={selectedImage}
+                alt={imageAlt ?? "Certificado"}
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
+            <p className="text-sm text-center text-muted-foreground mt-3">
+              {imageAlt}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

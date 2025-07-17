@@ -19,7 +19,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="font-heading font-bold text-xl text-primary">
-            Portfolio
+            Tomas Czernusza
           </Link>
 
           {/* Desktop Navigation */}

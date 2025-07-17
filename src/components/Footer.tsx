@@ -2,10 +2,9 @@ import { Heart, Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Mail, href: "mailto:john.doe@email.com", label: "Email" },
+    { icon: Github, href: "https://github.com/Chulusca", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/tomasczernuszka", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:czernuszkatomas@email.com", label: "Email" },
   ];
 
   return (
@@ -16,18 +15,17 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <h3 className="font-heading font-bold text-xl text-primary">
-              John Doe
+              Tomas Czernuszka
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Passionate full-stack developer creating exceptional digital experiences 
-              with modern technologies and clean code practices.
+              Desarrollador full-stack apasionado, creando experiencias digitales excepcionales con tecnologías modernas y prácticas de código limpio.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
             <h4 className="font-heading font-semibold text-foreground">
-              Quick Links
+              Links
             </h4>
             <nav className="space-y-2">
               <a href="/" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
@@ -36,8 +34,8 @@ const Footer = () => {
               <a href="/cv" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 CV
               </a>
-              <a href="#contact" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                Contact
+              <a href="mailto:czernuszkatomas@email.com" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                Contacto
               </a>
             </nav>
           </div>
@@ -68,10 +66,10 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            © 2024 John Doe. All rights reserved.
+            © 2025 Tomas Czernuszka. Todos los derechos reservados.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1 mt-4 md:mt-0">
-            Made with <Heart className="w-4 h-4 text-red-500" /> using React & Tailwind CSS
+            Hecho <Heart className="w-4 h-4 text-red-500" /> usando React & Tailwind CSS
           </p>
         </div>
       </div>

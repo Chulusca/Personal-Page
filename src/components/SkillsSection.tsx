@@ -12,13 +12,21 @@ const SkillsSection = () => {
       skills: ["Node.js", "Express", "RESTful APIs", "ASP.NET", "MVC", "C#"],
     },
     {
-      title: "Programming Languages",
+      title: "Lenguajes de Programación",
       skills: ["JavaScript", "Python", "C#", "C++", "TypeScript"],
     },
     {
-      title: "Tools & Platforms",
+      title: "Herramientas & Plataformas",
       skills: [".NET Framework", "Expo Go", "Git", "VS Code", "Visual Studio", "npm"],
     },
+    {
+    title: "Cloud & Servicios",
+    skills: ["Firebase", "Google Cloud Platform", "Ngrok", "Vercel"],
+    },
+    {
+    title: "Bases de Datos",
+    skills: ["SQL Server", "PostgreSQL", "Supabase"],
+  },
   ];
 
   return (
@@ -26,10 +34,10 @@ const SkillsSection = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-heading font-bold text-3xl lg:text-4xl text-foreground mb-4">
-            Technical Skills
+            Tecnologias
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Self-taught technologies and frameworks I've been learning and practicing with
+            Tecnologías y frameworks que he aprendido y practicado.
           </p>
         </div>
 
